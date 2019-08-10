@@ -14,7 +14,7 @@ Before using the gallery, you have to process all of your images that will be pa
 
 ## Demo
 
-https://oidamo.de/gallery-demo.html
+https://oidamo.de/gallery.html
 
 ## How to use the gallery in your project
 ### Pre-requirements
