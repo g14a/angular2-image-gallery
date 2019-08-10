@@ -17,9 +17,6 @@ var resolutions = [
     {name: 'preview_xxs', height: 375},
     {name: 'preview_xs', height: 768},
     {name: 'preview_s', height: 1080},
-    {name: 'preview_m', height: 1600},
-    {name: 'preview_l', height: 2160},
-    {name: 'preview_xl', height: 2880},
     {name: 'raw', height: undefined}
 ];
 

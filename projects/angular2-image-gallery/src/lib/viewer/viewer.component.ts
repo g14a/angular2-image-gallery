@@ -32,26 +32,26 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
                     opacity: 0,
                     transform: 'translate(30px, 0px)'
                 }),
-                animate('250ms 500ms ease-in')
+                animate('100ms 250ms ease-in')
             ]),
             transition('* => enterFromLeft', [
                 style({
                     opacity: 0,
                     transform: 'translate(-30px, 0px)'
                 }),
-                animate('250ms 500ms ease-in')
+                animate('100ms 250ms ease-in')
             ]),
             transition('* => leaveToLeft', [
                 style({
                     opacity: 1
                 }),
-                animate('250ms ease-out')]
+                animate('100ms ease-out')]
             ),
             transition('* => leaveToRight', [
                 style({
                     opacity: 1
                 }),
-                animate('250ms ease-out')]
+                animate('100ms ease-out')]
             )
         ]),
         trigger('showViewerTransition', [
@@ -71,7 +71,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
                 style({
                     opacity: 1
                 }),
-                animate('500ms ease-out')]
+                animate('250ms ease-out')]
             )
         ])
     ]
@@ -234,7 +234,7 @@ export class ViewerComponent {
                     this.transform = 0
                 }
             })
-        }, 500)
+        }, 100)
     }
 
     private updateQuality(): void {
@@ -255,18 +255,6 @@ export class ViewerComponent {
                 }
                 if (screenWidth > this.images[this.currentIdx]['preview_s'].width &&
                     screenHeight > this.images[this.currentIdx]['preview_s'].height) {
-                    this.categorySelected = 'preview_m'
-                }
-                if (screenWidth > this.images[this.currentIdx]['preview_m'].width &&
-                    screenHeight > this.images[this.currentIdx]['preview_m'].height) {
-                    this.categorySelected = 'preview_l'
-                }
-                if (screenWidth > this.images[this.currentIdx]['preview_l'].width &&
-                    screenHeight > this.images[this.currentIdx]['preview_l'].height) {
-                    this.categorySelected = 'preview_xl'
-                }
-                if (screenWidth > this.images[this.currentIdx]['preview_xl'].width &&
-                    screenHeight > this.images[this.currentIdx]['preview_xl'].height) {
                     this.categorySelected = 'raw'
                 }
                 break
@@ -275,16 +263,12 @@ export class ViewerComponent {
                 this.categorySelected = 'preview_xxs'
                 break
             }
-            case 'mid': {
-                this.categorySelected = 'preview_m'
-                break
-            }
             case 'high': {
                 this.categorySelected = 'raw'
                 break
             }
             default: {
-              this.categorySelected = 'preview_m'
+              this.categorySelected = 'preview_s'
             }
         }
     }
